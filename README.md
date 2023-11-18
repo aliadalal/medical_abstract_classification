@@ -1,4 +1,4 @@
-# medical_abstract_classification
+# Medical Abstract Classification
 **Business Understanding and Problem Description
 **
 The business goal is to develop an application that can categorize a medical abstract into one of the five conditions. Each class represent current medical condition of a patient. These conditions are:  
