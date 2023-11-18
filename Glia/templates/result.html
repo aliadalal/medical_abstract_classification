@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Classification Result</h1>
+        <p><strong>Medical Abstract</strong></p>
+        <p>{{ text }}</p>
+        <p><strong>Condition Class:</strong>{{ classification }}</p> 
+        <p><strong>Condition Description:</strong>{{conditionL}}</p>
+        <p><a href="/">Back to Input</a></p>
+    </div>
+        
+</body>
+</html>
