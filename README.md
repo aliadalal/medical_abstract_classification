@@ -1,6 +1,7 @@
 # Medical Abstract Classification
 **Business Understanding and Problem Description
 **
+
 The business goal is to develop an application that can categorize a medical abstract into one of the five conditions. Each class represent current medical condition of a patient. These conditions are:  
 These classes 
     1	neoplasms
@@ -14,6 +15,7 @@ Initial analysis shows that a text classification machine learning technique may
 
 **Data Processing and Analysis
 **
+
 This section of the notebook processes data, analyses and prepares data for the next stage of classification i.e. machine learning modelling.
 
 Data is ingested - in this case Kaggle dataset for medical abstracts is ingested. The data is then processed through various claeaning stages including removal of missing data. In addition, the abstract text is converted to lower case, and split into word tokens. The stopwords are then removed from the text and lemmatization is performed before putting the processed word tokens back into string. The string represent processed medical abstract ready for further processing.
