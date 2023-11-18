@@ -51,15 +51,20 @@ def dataProcessorString(dfString):
     tempDoc = ' '.join(tempDoc) # recreate the doc
     return tempDoc
 
+def selectModel(modelID):
+    if (modelID=='NB'):
+        model_pkl_file  = "/Users/aliasgherdalal/Documents/Glia/models/NBTextClass.pkl"
+    else:
+        model_pkl_file = "/Users/aliasgherdalal/Documents/Glia/models/LRTextClass.pkl"
+        
+    vector_pkl_file = "/Users/aliasgherdalal/Documents/Glia/models/vectorizer.pickle"
 
-model_pkl_file  = "/Users/aliasgherdalal/Documents/Glia/models/NBTextClass.pkl"  
-#model_pkl_file = "/Users/aliasgherdalal/Documents/Glia/models/LRTextClass.pkl"  
-vector_pkl_file = "/Users/aliasgherdalal/Documents/Glia/models/vectorizer.pickle"
-with open(model_pkl_file, 'rb') as file:  
-    modelUploaded = pickle.load(file)
-# load the vectorizer
-with open(vector_pkl_file, 'rb') as file:  
-    loaded_vectorizer = pickle.load(file)
+    with open(model_pkl_file, 'rb') as file:  
+        loadedModel = pickle.load(file)
+    # load the vectorizer
+    with open(vector_pkl_file, 'rb') as file:  
+        loadedVectorizer = pickle.load(file)
+    return loadedModel,loadedVectorizer
     
 def currentCondition(classID):
     if (classID==1):
@@ -74,10 +79,11 @@ def currentCondition(classID):
         conditionL='general pathological conditions'
     return conditionL
 
-def classify_text(text):
+def classify_text(text,modelID):
     text=dataProcessorString(text)
     #text=self.cVectorize.transform([text])
-    y_predict =modelUploaded.predict(loaded_vectorizer.transform([text]))
+    loadedModel,loadedVectorizer = selectModel(modelID)
+    y_predict =loadedModel.predict(loadedVectorizer.transform([text]))
     #print(modelUploaded.predict(loaded_vectorizer.transform([utt])))
     
     conditionL=currentCondition(y_predict[0])

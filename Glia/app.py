@@ -11,8 +11,10 @@ def index():
 def classify():
     if request.method == 'POST':
         text = request.form['text']
+        modelID=request.form['models']
+        print("@@@@@@" , modelID, "@@@@@@\n")
         # Classify text using the model
-        classification,conditionL = classify_text(text)
+        classification,conditionL = classify_text(text,modelID)
         return render_template('result.html', text=text, classification=classification,conditionL=conditionL)
 
 if __name__ == '__main__':
