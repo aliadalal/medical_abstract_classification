@@ -9,6 +9,12 @@
     <div class="container">
         <h1>Medical Abstract Classification</h1>
         <form action="/classify" method="post">
+            <label for="model">Select model</label>
+              <select name="models" id="model">
+                <option value="NB">Naive Bayes</option>
+                <option value="LR">Logistic Regression</option>
+              </select>
+              <br><br>
             <textarea name="text" rows="5" cols="40" placeholder="Enter medical abstract for classification"></textarea>
             <br>
             <input type="submit" value="Classify">
