@@ -1,0 +1,82 @@
+# Placeholder function for text classification (replace this with your actual text classification model)
+import pickle
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+import pandas as pd
+import numpy as np
+import csv
+import os
+import re
+
+from sklearn import metrics
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+cVectorize = CountVectorizer()
+
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
+
+import nltk
+from nltk import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
+import collections
+from collections import defaultdict
+
+import tensorflow as tf
+import tensorflow_hub as hub
+import tensorflow_datasets as tfds
+from tensorflow.python import keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Embedding, LSTM
+
+from tkinter import *
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set()
+import scipy
+def dataProcessorString(dfString):
+# Performs text processing on a text string (a medical abstract) and returns processed string 
+# for vectorizing for machine learning inference.
+    lemmatizer = WordNetLemmatizer()
+
+    tempDoc=dfString
+    tempDoc=tempDoc.lower() # lower case
+    tempDoc = tempDoc.split() # split into words
+    tempDoc = [word for word in tempDoc if word not in stopwords.words('english')] # remove stops words
+    tempDoc = [lemmatizer.lemmatize(word) for word in tempDoc] #Lemmatize
+    tempDoc = ' '.join(tempDoc) # recreate the doc
+    return tempDoc
+
+
+model_pkl_file = "/Users/aliasgherdalal/Documents/Glia/models/NBTextClass.pkl"  
+
+with open(model_pkl_file, 'rb') as file:  
+    modelUploaded = pickle.load(file)
+# load the vectorizer
+loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
+
+
+def classify_text(text):
+    text=dataProcessorString(text)
+    #text=self.cVectorize.transform([text])
+    y_predict =modelUploaded.predict(loaded_vectorizer.transform([text]))
+    #print(modelUploaded.predict(loaded_vectorizer.transform([utt])))
+    if (y_predict[0]==1):
+        conditionL='neoplasms'
+    elif (y_predict[0]==2):
+        conditionL='digestive system diseases'        
+    elif (y_predict[0]==3):
+        conditionL='nervous system diseases'        
+    elif (y_predict[0]==4):
+        conditionL='cardiovascular diseases'        
+    else:
+        conditionL='general pathological conditions'
+    return y_predict[0],conditionL
+
+    # Replace this logic with your text classification model
+    # For demonstration purposes, returning a placeholder value
+    
