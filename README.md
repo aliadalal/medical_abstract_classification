@@ -24,8 +24,23 @@ Data is ingested - in this case Kaggle dataset for medical abstracts is ingested
 
 Finally, the processed text is vectorized for input into the machine learnign model(s).
 ## MODELLING
+Modeling section of the notebook models data using various techniques including Naive Bayes, Logistic Regression and LSTM. The section also displays the cost curve for the models.
 ## EVALUATION
-## SAVE & DEPLOY 
+The evaluation section displays the results of model performance including confusion matrix heatmap.
+## SAVE
+The save section saves the model and vectors to deployment directory using pickle, where it can be accessed by the application to serve up inference.
+
+## INFERENCE APPLICATION
+The inference application is a Flask based application that serves up a web page to select a model and input medical abstract for classification. The inference is requested using a REST api endpoint /classify.
+
+#### FRONTEND COMPONENTS
+1. index.html
+2. results.html
+3. stype.css
+4. script.js
+#### BACKEND COMPONENTS
+1. app.py
+2. text_classification_model.py
 
 ## INSTRUCTIONS
 
