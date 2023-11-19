@@ -50,7 +50,7 @@ The inference application is a Flask based application that serves up a web page
 3. Server is accessible at 127.0.0.1:5000
 4. Enter a medical abstract text and click classify to call inference API.
 
-## INFERENCE SAMPLES
+## INFERENCE SAMPLE
 <img width="865" alt="Dashboard" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/6101983f-b161-46a4-8c72-8d59b3f2a164">
 <img width="964" alt="Dashboard 2" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/2a4fb91e-0e8c-47e8-b4be-205d7ef66b47">
 <img width="824" alt="Results 1" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/9707be90-3c3c-4860-8dce-8698fe5f9d09">
