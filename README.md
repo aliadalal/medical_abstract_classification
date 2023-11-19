@@ -13,8 +13,7 @@ To aid in the development of the application, dataset containing ~28k labelled a
 
 Initial analysis shows that a text classification machine learning technique may be applied to develop an application, which when given an abstract will be capable of returning the most likely condition that the medical abstract is referring to in the text and hence the patient associated to the abstract is currently afflicted to.
 
-**DATA PROCESSING & ANALYSIS
-**
+## DATA PROCESSING & ANALYSIS
 
 This section of the notebook processes data, analyses and prepares data for the next stage of classification i.e. machine learning modelling.
 
@@ -22,15 +21,14 @@ Data is ingested - in this case Kaggle dataset for medical abstracts is ingested
 
 Finally, the processed text is vectorized for input into the machine learnign model(s).
 
-**INSTRUCTIONS**
+## INSTRUCTIONS
 
 1. Download the repository.
 2. From command line >>python /Glia/app.py
 3. Server is accessible 127.0.0.1:5000
 4. Enter a medical abstract text and click classify
 
-**INFERENCE SAMPLES
-**
+## INFERENCE SAMPLES
 <img width="865" alt="Dashboard" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/6101983f-b161-46a4-8c72-8d59b3f2a164">
 <img width="964" alt="Dashboard 2" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/2a4fb91e-0e8c-47e8-b4be-205d7ef66b47">
 <img width="824" alt="Results 1" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/9707be90-3c3c-4860-8dce-8698fe5f9d09">
