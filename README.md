@@ -30,17 +30,18 @@ The evaluation section displays the results of model performance including confu
 ## SAVE
 The save section saves the model and vectors to deployment directory using pickle, where it can be accessed by the application to serve up inference.
 
+NOTE: The notebook is stored in /source and models are stored in /models directory. Dataset is stored in /dataset folder.
 ## INFERENCE APPLICATION
 The inference application is a Flask based application that serves up a web page to select a model and input medical abstract for classification. The inference is requested using a REST api endpoint /classify.
 
 #### FRONTEND COMPONENTS
-1. index.html
-2. results.html
-3. stype.css
-4. script.js
+1. index.html (/templates)
+2. results.html (/templates)
+3. stype.css (/static)
+4. script.js(/)
 #### BACKEND COMPONENTS
-1. app.py
-2. text_classification_model.py
+1. app.py (/)
+2. text_classification_model.py (/)
 
 ## INSTRUCTIONS
 
