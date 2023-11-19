@@ -25,8 +25,8 @@ Finally, the processed text is vectorized for input into the machine learnign mo
 
 1. Download the repository.
 2. From command line >>python /Glia/app.py
-3. Server is accessible 127.0.0.1:5000
-4. Enter a medical abstract text and click classify
+3. Server is accessible at 127.0.0.1:5000
+4. Enter a medical abstract text and click classify to call inference API.
 
 ## INFERENCE SAMPLES
 <img width="865" alt="Dashboard" src="https://github.com/aliadalal/medical_abstract_classification/assets/5640612/6101983f-b161-46a4-8c72-8d59b3f2a164">
