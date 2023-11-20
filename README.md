@@ -28,7 +28,7 @@ Modeling section of the notebook models data using various techniques including 
 ## EVALUATION
 The evaluation section displays the results of model performance including confusion matrix heatmap.
 ## SAVE
-The save section saves the model and vectors to deployment directory using pickle, where it can be accessed by the application to serve up inference.
+The save section saves the model and vectors to deployment directory, where it can be accessed by the application to serve up inference.
 
 NOTE: The notebook is stored in /source and models are stored in /models directory. Dataset is stored in /dataset folder.
 ## INFERENCE APPLICATION
