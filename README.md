@@ -38,7 +38,6 @@ The inference application is a Flask based application that serves up a web page
 1. index.html (/templates)
 2. results.html (/templates)
 3. stype.css (/static)
-4. script.js(/)
 #### BACKEND COMPONENTS
 1. app.py (/)
 2. text_classification_model.py (/)
